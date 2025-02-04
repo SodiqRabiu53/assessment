@@ -22,7 +22,7 @@ body {
 
 /* General Styles */
 .container {
-    width: 80%;
+    width: 80%; /* Keep 80% for desktop, adjust for mobile */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -65,7 +65,7 @@ header {
     color: #333;
     cursor: pointer;
     padding: 0;
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by default on desktop */
 }
 
 /* Navigation Styles */
@@ -699,35 +699,142 @@ footer a {
     height: auto;
 }
 
-/* Media Queries */
+/* Media Queries for Mobile Responsiveness */
 @media (max-width: 767px) {
+    .image {
+        display: none;
+    }
+    .container {
+        width: 95%; /* Wider container on mobile */
+        padding: 0 10px;
+    }
+
+    /* Header adjustments */
     .header-content {
-        flex-direction: column; /* Stack logo and menu button */
-        align-items: flex-start; /* Align to the start on mobile */
+        flex-direction: column; /* Stack logo and nav */
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
     }
 
     .menu-toggle {
-        display: block; /* Show menu toggle on mobile */
+        display: block; /* Show menu toggle */
         position: absolute;
         top: 10px;
         right: 10px;
     }
 
     .header-buttons {
-        display: none; /* Initially hide header buttons */
+        display: none; /* Hide on mobile, toggle with JS */
         flex-direction: column;
         width: 100%;
         text-align: center;
-        margin-top: 10px;
     }
 
     .header-buttons.active {
-        display: flex; /* Show header buttons when active class is present */
+        display: flex; /* Show menu when toggled */
     }
 
     .header-buttons a {
         margin: 5px 0;
         padding: 8px;
         border-bottom: 1px solid #eee;
+    }
+
+    /* Hero Section adjustments */
+    .hero-content {
+        flex-direction: column; /* Stack text and image */
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2em; /* Smaller heading */
+    }
+
+    .hero-image {
+        max-width: 100%; /* Image takes full width */
+    }
+
+    .search-form {
+        flex-direction: column; /* Stack search elements */
+    }
+
+    .search-form input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* How It Works Section */
+    .how-it-works-grid {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+
+    .how-it-works-item {
+        width: 100%; /* Full width items */
+    }
+
+    /* Job Categories Section */
+    .job-categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid */
+    }
+
+    /* Newsletter Section */
+    .newsletter-content {
+        flex-direction: column; /* Stack content */
+        text-align: center; /* Center align text */
+    }
+
+    .newsletter-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .newsletter-image {
+        max-width: 80%; /* Image takes more width */
+    }
+
+    /* Footer adjustments */
+    footer .links {
+        flex-direction: column; /* Stack links */
+        align-items: center;
+    }
+
+    footer .links a {
+        margin: 5px 0;
+    }
+     /* Employer Hero Adjustments */
+    .hero.employer-hero {
+        padding: 30px 0; /* Smaller padding */
+    }
+
+    .hero.employer-hero .hero-text {
+        max-width: 90%; /* More readable text width */
+    }
+
+    .hero.employer-hero h1 {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+
+    .why-godp .image {
+        max-width: 100%; /* Take full width on mobile */
+    }
+
+    .why-godp .content {
+        max-width: 100%; /* Text takes full width on mobile */
+    }
+
+    .pricing-plans {
+        flex-direction: column; /* Stack pricing plans vertically */
+        align-items: center; /* Center the pricing plans */
+    }
+
+    .pricing .plan {
+        width: 90%; /* Take more width for better spacing */
     }
 }

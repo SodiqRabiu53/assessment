@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Master</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e67e22; /* Example color */
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .header .nav a:hover {
+            color: #e67e22;
+        }
+
+        .header .nav .button {
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            padding: 50px;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .hero .content {
+            max-width: 500px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero p {
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .hero .button {
+            background-color: #e67e22;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero .image {
+            max-width: 400px;
+            height: auto;
+        }
+
+        /* Companies Section */
+        .companies {
+            padding: 30px 50px;
+        }
+
+        .companies h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .companies .logos {
+            display: flex;
+            gap: 30px;
+            justify-content: flex-start; /* Adjusted to flex-start */
+            align-items: center;
+            overflow-x: auto; /* Added horizontal scrolling */
+            padding-bottom: 10px; /* Space for scrollbar */
+        }
+
+        .companies img {
+            max-height: 50px;
+            width: auto;
+            flex-shrink: 0; /* Prevent logos from shrinking */
+        }
+
+        /* Why GODP Section */
+        .why-godp {
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .why-godp .image {
+            max-width: 500px;
+            height: auto;
+        }
+
+        .why-godp .content {
+            max-width: 600px;
+            margin-left: 50px;
+        }
+
+        .why-godp h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .why-godp p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .why-godp ul {
+            margin-top: 20px;
+        }
+
+        .why-godp li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .why-godp li::before {
+            content: '✓'; /* Checkmark */
+            color: #27ae60; /* Green */
+            margin-right: 10px;
+            font-size: 1.2em;
+            display: block; /* Ensuring it takes space */
+            width: 20px; /* Fixed width for alignment */
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .pricing .plan {
+            border: 1px solid #ddd;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .pricing .plan h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .pricing .plan .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        .pricing .plan ul {
+            margin-bottom: 30px;
+        }
+
+        .pricing .plan li {
+            margin-bottom: 10px;
+            color: #555;
+            text-align: left;
+        }
+
+        .pricing .plan li::before {
+            content: '✓';
+            color: #27ae60;
+            margin-right: 10px;
+        }
+
+        .pricing .plan .button {
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .pricing .plan.standard {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .pricing .plan.standard h3,
+        .pricing .plan.standard .price,
+        .pricing .plan.standard li {
+            color: white;
+        }
+
+        .pricing .plan.standard li::before {
+            color: white;
+        }
+
+        .pricing .plan.standard .button {
+            background-color: white;
+            color: #f39c12;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 50px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .footer .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .footer .links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer .links a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer .social a {
+            text-decoration: none;
+            color: #555;
+            font-size: 1.5em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header .nav {
+                margin-top: 20px;
+            }
+
+            .hero {
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero .content {
+                max-width: 100%;
+            }
+
+            .hero .image {
+                max-width: 100%;
+            }
+
+            .companies {
+                padding: 20px;
+            }
+
+            .why-godp {
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .why-godp .image {
+                max-width: 100%;
+            }
+
+            .why-godp .content {
+                max-width: 100%;
+                margin-left: 0;
+            }
+
+            .pricing {
+                padding: 20px;
+            }
+
+            .pricing .plan {
+                width: 100%;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+
+            .footer .links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Image Styles */
+        .logo {
+            width: 120px; /* Adjust size as needed */
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .hero .image {
+            width: 400px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .why-godp .image {
+            width: 500px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .companies img {
+            max-width: 150px; /* Adjust size as needed */
+            height: auto;
+            margin: 10px; /* Add spacing between logos */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Specific Styling */
+        .header .logo {
+            color: #e67e22;
+        }
+
+        .header .nav a {
+            color: #333;
+        }
+
+        .hero h1 {
+            color: #333;
+        }
+
+        .why-godp h2 {
+            color: #333;
+        }
+
+        .pricing .plan h3 {
+            color: #333;
+        }
+
+        .pricing .plan .price {
+            color: #e67e22;
+        }
+        /* Style adjustments */
+        .pricing .plan.exclusive {
+            border: 2px solid #ddd;
+            background-color: #fff;
+            color: #333;
+        }
+        .pricing .plan.exclusive .button {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        .pricing .plan.standard {
+            border: 2px solid #f39c12;
+            background-color: #f39c12;
+            color: white;
+        }
+        .pricing .plan.standard .button {
+            background-color: white;
+            color: #f39c12;
+        }
+        .pricing .plan.executive {
+            border: 2px solid #ddd;
+            background-color: #fff;
+            color: #333;
+        }
+        .pricing .plan.executive .button {
+            background-color: #e67e22;
+            color: white;
+        }
+         .pricing .plan ul {
+             margin-bottom: 30px;
+             padding: 0;
+         }
+
+         .pricing .plan li {
+             list-style-type: none;
+             margin-bottom: 10px;
+             padding-left: 25px;
+             position: relative;
+         }
+
+         .pricing .plan li::before {
+             content: '✓';
+             position: absolute;
+             left: 0;
+             color: #27ae60;
+             font-weight: bold;
+         }
+        /* Scrollbar styling */
+        .companies .logos::-webkit-scrollbar {
+            height: 8px; /* Adjust as needed */
+        }
+
+        .companies .logos::-webkit-scrollbar-thumb {
+            background-color: #e67e22; /* Adjust color as needed */
+            border-radius: 4px;
+        }
+
+        .companies .logos::-webkit-scrollbar-track {
+            background-color: #f1f1f1; /* Adjust color as needed */
+            border-radius: 4px;
+        }
+        /* Style for price display */
+        .price-label {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        .price-unit {
+            font-size: 1.2em;
+            color: #555;
+            margin-left: 5px;
+        }
+        /* Style for bullet points */
+        .why-godp ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .why-godp li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .why-godp li::before {
+            content: '✓';
+            color: #27ae60;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="job master Frame 2.png" alt="Job Master Logo" class="logo">
+            </a>
+            <nav class="nav">
+                <a href="#">Register</a>
+                <a href="#">Login</a>
+                <a href="#" class="button">Get a Job</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="content">
+                <h1>Hire the best talent for your job.</h1>
+                <p>Imperdiet pulvinar augue mauris morbi sed nibh gravida. Proin aliquam risus viverra elit. Metus rhoncus cras egestas in nullam et posuere eget quis. Laoreet blandit viverra senectus viverra.</p>
+                <a href="#" class="button">Post a Job</a>
+            </div>
+            <img src="employer Group 1.png" alt="Talent Network" class="image">
+        </section>
+
+        <section class="companies">
+            <h2>Trusted by over 1000+ companies</h2>
+            <div class="logos">
+                <img src="image 5.png" alt="Company Logo">
+                <img src="image 6.png" alt="Company Logo">
+                <img src="image 7.png" alt="Company Logo">
+                <img src="image 5.png" alt="Company Logo">
+            </div>
+        </section>
+
+        <section class="why-godp">
+            <img src="employer frame.png" alt="People Network" class="image">
+            <div class="content">
+                <h2>Why GODP</h2>
+                <p>Eget at blandit id facilisi felis, est. Adipiscing est sem leo non est.</p>
+                <ul>
+                    <li>Eget at blandit id facilisi felis, est. Lorem viverra elementum faucibus nisl amet amet convallis. Cursus eros posuere quam tincidunt. Ornare varius ac blandit facilisis ut risus at. Nulla erat odio nec.</li>
+                    <li>Eget at blandit id facilisi felis, est. Lorem viverra elementum faucibus nisl amet amet convallis. Cursus eros posuere quam tincidunt. Ornare varius ac blandit facilisis ut risus at. Nulla erat odio nec.</li>
+                    <li>Eget at blandit id facilisi felis, est. Lorem viverra elementum faucibus nisl amet amet convallis. Cursus eros posuere quam tincidunt. Ornare varius ac blandit facilisis ut risus at. Nulla erat odio nec.</li>
+                    <li>Eget at blandit id facilisi felis, est. Lorem viverra elementum faucibus nisl amet amet convallis. Cursus eros posuere quam tincidunt. Ornare varius ac blandit facilisis ut risus at. Nulla erat odio nec.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="plan exclusive">
+                <h3>Exclusive</h3>
+                <div class="price">
+                    <span class="price-label">From</span>
+                    <span class="price-value">FREE</span>
+                    <span class="price-unit">/ m</span>
+                </div>
+                <ul>
+                    <li>1 user 1 connected calendar</li>
+                    <li>Up to 12 responses</li>
+                    <li>Up to 3 survey results archived</li>
+                    <li>Knowledge base</li>
+                </ul>
+                <a href="#" class="button">Buy Now</a>
+            </div>
+
+            <div class="plan standard">
+                <h3>Standard</h3>
+                <div class="price">
+                    <span class="price-label">From</span>
+                    <span class="price-value">FREE</span>
+                    <span class="price-unit">/ m</span>
+                </div>
+                <ul>
+                    <li>1 user 1 connected calendar</li>
+                    <li>Up to 12 responses</li>
+                    <li>Up to 3 survey results archived</li>
+                    <li>Knowledge base</li>
+                    <li>1 user 1 connected calendar</li>
+                    <li>Up to 12 responses</li>
+                    <li>Up to 3 survey results archived</li>
+                    <li>Knowledge base</li>
+                    <li>1 user 1 connected calendar</li>
+                    <li>Up to 12 responses</li>
+                    <li>Up to 3 survey results archived</li>
+                    <li>Knowledge base</li>
+                    <li>1 user 1 connected calendar</li>
+                    <li>Up to 12 responses</li>
+                    <li>Up to 3 survey results archived</li>
+                    <li>Knowledge base</li>
+                </ul>
+                <a href="#" class="button">Buy Now</a>
+            </div>
+
+            <div class="plan executive">
+                <h3>Executive</h3>
+                <div class="price">
+                    <span class="price-label">From</span>
+                    <span class="price-value">FREE</span>
+                    <span class="price-unit">/ m</span>
+                </div>
+                <ul>
+                    <li>1 user 1 connected calendar</li>
+                    <li>Up to 12 responses</li>
+                    <li>Up to 3 survey results archived</li>
+                    <li>Knowledge base</li>
+                </ul>
+                <a href="#" class="button">Buy Now</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <a href="#" class="logo">
+                <img src="footer.png" alt="GOS HRM Logo" class="logo">
+            </a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <div class="links">
+                <a href="#">Campaigns</a>
+                <a href="#">Email Marketing</a>
+                <a href="#">Branding</a>
+                <a href="#">Offline</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>

@@ -1,0 +1,733 @@
+/* Basic Reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Styles */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e64a19;
+}
+
+/* Menu Toggle Button Styles */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+    display: none; /* Hidden by default */
+}
+
+/* Navigation Styles */
+.header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons a {
+    margin-left: 20px;
+    color: #333;
+}
+
+.header-buttons .post-job-btn {
+    background-color: #e64a19;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Hero Section Styles (Candidate) */
+.hero {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    background-color: #e64a19;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Trusted Companies Section */
+.trusted-companies {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.trusted-companies h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.company-logos img {
+    max-width: 100px;
+    max-height: 50px;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.how-it-works-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.how-it-works p {
+    text-align: center;
+    color: #666;
+}
+
+.how-it-works-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.how-it-works-item {
+    width: 45%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.how-it-works-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.how-it-works-item p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Job Categories Section */
+.job-categories {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.job-categories h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.job-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.job-category-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.job-category-item:hover {
+    transform: translateY(-5px);
+}
+
+.job-category-item img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.job-category-item h3 {
+    font-size: 1.1em;
+    color: #444;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background-color: #013A61;
+    padding: 50px 0;
+    color: white;
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.newsletter-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.newsletter-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.newsletter-form {
+    flex: 1;
+    text-align: left;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    background-color: #e64a19;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.newsletter-image {
+    flex: 1;
+    max-width: 30%;
+}
+
+.newsletter-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    color: #777;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #777;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.2em;
+    color: #777;
+}
+
+.footer-social a:hover {
+    color: #e64a19;
+}
+
+/* How It Works Section Styling */
+.how-it-works-section {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.how-it-works-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.how-it-works-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.how-it-works-card h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.how-it-works-card p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 5px;
+    height: 10px;
+    border: solid green;
+    border-width: 0 3px 3px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.how-it-works-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Employer Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.hero {
+    display: flex;
+    padding: 50px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero .content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.hero .button {
+    background-color: #e67e22;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero .image {
+    width: 400px;
+    height: auto;
+}
+
+.companies {
+    padding: 30px 50px;
+}
+
+.companies h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.companies .logos {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.companies img {
+    max-height: 50px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.why-godp {
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.why-godp-content {
+    display: flex;
+    align-items: center;
+}
+
+.why-godp .image {
+    max-width: 500px;
+    height: auto;
+}
+
+.why-godp .content {
+    max-width: 600px;
+    margin-left: 50px;
+}
+
+.why-godp h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.why-godp p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.why-godp ul {
+    margin-top: 20px;
+}
+
+.why-godp li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.why-godp li::before {
+    content: '✓';
+    color: #27ae60;
+    margin-right: 10px;
+    font-size: 1.2em;
+    display: block;
+    width: 20px;
+}
+
+.pricing {
+    padding: 50px;
+}
+
+.pricing h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.pricing-plans {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pricing .plan {
+    border: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.pricing .plan h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.pricing .plan .price {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 20px;
+}
+
+.pricing .plan ul {
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.pricing .plan li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    color: #555;
+    text-align: left;
+}
+
+.pricing .plan li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.pricing .plan .button {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.pricing .plan.standard {
+    border: 2px solid #f39c12;
+    background-color: #f39c12;
+    color: white;
+}
+
+.pricing .plan.standard h3,
+.pricing .plan.standard .price,
+.pricing .plan.standard li {
+    color: white;
+}
+
+.pricing .plan.standard li::before {
+    color: white;
+}
+
+.pricing .plan.standard .button {
+    background-color: white;
+    color: #f39c12;
+}
+
+.footer {
+    padding: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.footer .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer .links a {
+    text-decoration: none;
+    color: #555;
+}
+
+.footer .social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer .social a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.5em;
+}
+
+/* Image Styles */
+.logo {
+    width: 120px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hero .image {
+    width: 400px;
+    height: auto;
+}
+
+.why-godp .image {
+    width: 500px;
+    height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .header-content {
+        flex-direction: column; /* Stack logo and menu button */
+        align-items: flex-start; /* Align to the start on mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle on mobile */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .header-buttons {
+        display: none; /* Initially hide header buttons */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .header-buttons.active {
+        display: flex; /* Show header buttons when active class is present */
+    }
+
+    .header-buttons a {
+        margin: 5px 0;
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+    }
+}
